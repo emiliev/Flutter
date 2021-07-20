@@ -29,6 +29,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.6.1"
+  authentication:
+    dependency: "direct main"
+    description:
+      path: "lib/packages/authentication"
+      relative: true
+    source: path
+    version: "0.0.1"
   boolean_selector:
     dependency: transitive
     description:
@@ -169,6 +176,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.2"
+  domain_models:
+    dependency: transitive
+    description:
+      path: "lib/packages/domain_models"
+      relative: true
+    source: path
+    version: "0.0.1"
   fake_async:
     dependency: transitive
     description:
@@ -235,6 +249,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  home:
+    dependency: "direct main"
+    description:
+      path: "lib/packages/home"
+      relative: true
+    source: path
+    version: "0.0.1"
   http_multi_server:
     dependency: transitive
     description:
@@ -284,6 +305,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.12.10"
+  meal_details:
+    dependency: "direct main"
+    description:
+      path: "lib/packages/meal_details"
+      relative: true
+    source: path
+    version: "0.0.1"
   meta:
     dependency: transitive
     description:
@@ -312,6 +340,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
+  payments:
+    dependency: "direct main"
+    description:
+      path: "lib/packages/payments"
+      relative: true
+    source: path
+    version: "0.0.1"
   pedantic:
     dependency: transitive
     description:
@@ -464,6 +499,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  widgets:
+    dependency: transitive
+    description:
+      path: "lib/packages/widgets"
+      relative: true
+    source: path
+    version: "0.0.1"
   yaml:
     dependency: transitive
     description:

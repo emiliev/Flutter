@@ -26,6 +26,17 @@ dependencies:
   flutter_riverpod: ^0.14.0+1
   freezed_annotation: ^0.14.1
 
+  home:
+    path: ./lib/packages/home
+
+  payments:
+    path: ./lib/packages/payments
+
+  meal_details:
+    path: ./lib/packages/meal_details
+
+  authentication:
+    path: ./lib/packages/authentication
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

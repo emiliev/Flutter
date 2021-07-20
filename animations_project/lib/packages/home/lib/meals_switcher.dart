@@ -59,13 +59,13 @@ class MealType extends ConsumerWidget {
     final TextTheme textTheme = theme.textTheme;
     final ColorScheme colorScheme = theme.colorScheme;
     final filter = watch(filterProvider);
-
+    final selectorPosition = _setWidgetPositionX(filter) ?? _selectorPositionX;
     return Stack(
       children: [
         AnimatedPositioned(
           duration: const Duration(milliseconds: 450),
           curve: Curves.fastOutSlowIn,
-          left: _selectorPositionX,
+          left: selectorPosition,
           bottom: 4,
           child: Container(
             height: 4,
@@ -82,9 +82,7 @@ class MealType extends ConsumerWidget {
             children: [
               InkWell(
                 key: _itemKey1,
-                onTap: () {
-                  _selectFilter(EMealType.topList, watch);
-                },
+                onTap: () => _selectFilter(EMealType.topList, watch),
                 child: Text(
                   "Top Meals",
                   style: textTheme.headline6!.copyWith(
@@ -135,23 +133,27 @@ class MealType extends ConsumerWidget {
     watch(filterProvider.notifier).setFilterType(filter);
   }
 
-  void _setWidgetPositionX(EMealType filter, BuildContext context) {
-    //   late GlobalKey selectedGlobalKey;
-    //   switch (filter) {
-    //     case EMealType.topList:
-    //       selectedGlobalKey = _itemKey1;
-    //       break;
-    //     case EMealType.favourite:
-    //       selectedGlobalKey = _itemKey2;
-    //       break;
-    //     case EMealType.continental:
-    //       selectedGlobalKey = _itemKey3;
-    //       break;
-    //   }}
-    //   final RenderBox widgetRenderBox =
-    //       context.findRenderObject() as RenderBox;
-    //   final widgetPosition = widgetRenderBox.localToGlobal(Offset.zero);
-    //   final widgetSize = widgetRenderBox.size;
-    //   widgetPosition.dx - ((_selectorWidth - widgetSize.width) / 2);
+  double? _setWidgetPositionX(EMealType filter) {
+      late GlobalKey selectedGlobalKey;
+      switch (filter) {
+        case EMealType.topList:
+          selectedGlobalKey = _itemKey1;
+          break;
+        case EMealType.continental:
+          selectedGlobalKey = _itemKey2;
+          break;
+        case EMealType.favourite:
+          selectedGlobalKey = _itemKey3;
+          break;
+      }
+
+      final currentContext = selectedGlobalKey.currentContext;
+      if (currentContext == null) {
+        return null;
+      }
+      final RenderBox widgetRenderBox = currentContext.findRenderObject() as RenderBox;
+      final widgetPosition = widgetRenderBox.localToGlobal(Offset.zero);
+      final widgetSize = widgetRenderBox.size;
+      return widgetPosition.dx - ((_selectorWidth - widgetSize.width) / 2);
   }
 }

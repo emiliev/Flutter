@@ -1910,6 +1910,16 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 --------------------------------------------------------------------------------
+authentication
+domain_models
+home
+meal_details
+payments
+widgets
+
+TODO: Add your license here.
+
+--------------------------------------------------------------------------------
 boolean_selector
 build_runner
 code_builder

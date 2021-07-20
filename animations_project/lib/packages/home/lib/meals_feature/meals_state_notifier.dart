@@ -27,6 +27,9 @@ class MealFilterNotifier extends StateNotifier<EMealType> {
   MealFilterNotifier() : super(EMealType.topList);
 
   setFilterType(EMealType type) {
+    if (type == state) {
+      return;
+    }
     state = type;
   }
 }

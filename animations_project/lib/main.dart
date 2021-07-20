@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'screens/auth/auth_screen.dart';
-import 'screens/home/home_screen.dart';
-import 'screens/meal/meal_screen.dart';
-import 'screens/payments/add_card_screen.dart';
-import 'screens/payments/payment_methods_screen.dart';
+import 'package:authentication/auth/auth_screen.dart';
+import 'package:home/home_screen.dart';
+import 'package:meal_details/meal/meal_screen.dart';
+import 'package:payments/payments/add_card_screen.dart';
+import 'package:payments/payments/payment_methods_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
