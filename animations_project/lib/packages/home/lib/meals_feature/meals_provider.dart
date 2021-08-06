@@ -7,24 +7,18 @@ import 'package:home/meals_feature/meals_state_notifier.dart';
 import 'package:home/state/generic_state.dart';
 
 final mealsNotifierProvider =
-    StateNotifierProvider<MealNotifier, GenericState<List<Meal>>>(
-  (ref) => MealNotifier(
-    mealRepository: ref.watch(_mealsRepositoryProvider),
-  ),
+    StateNotifierProvider<MealViewModel, GenericState<List<Meal>>>(
+  (ref) => MealViewModel(ref),
 );
 
-//* Repository
-final _mealsRepositoryProvider = Provider<IMealsRepository>(
-  (ref) => FakeMealRepository(),
-);
+final mealRepositoryProvider = Provider((ref) => FakeMealRepository());
 
-final repositoryProvider = Provider((ref) => FakeMealRepository());
+final filterProvider = StateNotifierProvider<MealFilterViewModel, EMealType>(
+    (ref) => MealFilterViewModel());
 
-final filterProvider = StateNotifierProvider<MealFilterNotifier, EMealType>(
-    (ref) => MealFilterNotifier());
 final filteredMealProvider = FutureProvider<List<Meal>>((ref) async {
   final filter = ref.watch(filterProvider);
-  final mealsProvider = ref.read(repositoryProvider);
+  final mealsProvider = ref.read(mealRepositoryProvider);
   final meals = await mealsProvider.fetchMeals();
   switch (filter) {
     case EMealType.topList:

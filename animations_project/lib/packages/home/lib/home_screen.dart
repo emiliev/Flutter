@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:domain_models/models/meal_type.dart';
 import 'package:home/meals_feature/meals_provider.dart';
-import 'package:home/repository/category_provider.dart';
+import 'package:home/category_feature/category_provider.dart';
 
 import 'categories_list.dart';
 import 'meals_switcher.dart';
