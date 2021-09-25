@@ -31,7 +31,10 @@ jobs:
       # Setup the flutter environment.
       - name: Setup Flutter environment
         uses: subosito/flutter-action@v1
-      
+
+      - name: Move to correct directory
+        run: cd sample_clock
+
       # Get flutter dependencies
       - name: flutter pub get
         run: flutter pub get
