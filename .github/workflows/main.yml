@@ -30,26 +30,26 @@ jobs:
 
       # Setup the flutter environment.
       - name: Setup Flutter environment
-      - uses: subosito/flutter-action@v1
+        uses: subosito/flutter-action@v1
       
       # Get flutter dependencies
       - name: flutter pub get
-      - run: flutter pub get
+        run: flutter pub get
       
       # Check for any formatting issues in the code
       - name: Check for any formatting issues in the code
-      - run: flutter format --set-exit-if-changed .
+        run: flutter format --set-exit-if-changed .
 
       # Statically analyze for Date code for any errors
       - name: Statically analyze for Date code for any errors
-      - run: flutter analyze .
+        run: flutter analyze .
 
       # Build apk.
       - name: Buld apk
-      - run: flutter build apk
+        run: flutter build apk
 
       - name: Upload artifact to Firebase App Distribution
-      - uses: wzieba/Firebase-Distribution-Github-Action@v1.3.2
+        uses: wzieba/Firebase-Distribution-Github-Action@v1.3.2
         with:
           appId: ${{secrets.FIREBASE_APP_ID}}
 #      token: ${{secrets.FIREBASE_TOKEN}}
